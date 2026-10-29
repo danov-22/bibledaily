@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>BibleDaily — Bible Reading Planner</title>
+    <meta name="description" content="A personal Bible reading checklist with daily portions, translation references, and private notes.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="#today" aria-label="BibleDaily home">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span><span class="brand-name">BibleDaily</span><span class="brand-note">Reading the Word with schedule</span></span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#today" data-route="today">Today’s reading</a>
+          <a href="#translations" data-route="translations">Translations</a>
+          <a href="#progress" data-route="progress">Progress &amp; journal</a>
+          <a href="#plan" data-route="plan">Reading plan</a>
+        </nav>
+        <div class="account-tools">
+          <a class="sheet-link" data-sheet-link hidden target="_blank" rel="noopener noreferrer">My Google Sheet</a>
+          <span class="account-email" data-account-email hidden></span>
+          <span class="sync-status" data-sync-status aria-live="polite"></span>
+          <button class="theme-toggle" id="theme-toggle" data-action="toggle-theme" type="button">Warm mode</button>
+          <button class="sign-out" data-action="sign-out" type="button" hidden>Sign out</button>
+        </div>
+      </header>
+      <main id="app" aria-live="polite"></main>
+      <p class="footer-note">Nourishing the spirit as much as we care for the soul.</p>
+    </div>
+    <nav class="mobile-nav" aria-label="Main navigation">
+      <a href="#today" data-route="today"><span aria-hidden="true">🕮</span><span>Today</span></a>
+      <a href="#translations" data-route="translations"><span aria-hidden="true">Aa</span><span>Translations</span></a>
+      <a href="#progress" data-route="progress"><span aria-hidden="true">▤</span><span>Progress</span></a>
+      <a href="#plan" data-route="plan"><span aria-hidden="true">＋</span><span>Plan</span></a>
+    </nav>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

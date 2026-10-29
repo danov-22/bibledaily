@@ -1,0 +1,14 @@
+{
+  "name": "bibledaily",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node build.mjs",
+    "check": "node --check app.js && node --check data.js && node --check landing.js && node --check server.mjs && node --check pdf-export.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
