@@ -1,3 +1,4 @@
+import { mountReviews } from './reviews.js';
 import { createReadingPdf } from './pdf-export.js';
 import { bibleData } from './data.js';
 import { renderLandingPage } from './landing.js';
@@ -1143,6 +1144,7 @@ function render() {
   if (!demoMode && !authUser) {
     navState('');
     app.innerHTML = renderLandingPage({ loginAvailable, loginMessage });
+    mountReviews(app.querySelector('#reader-reviews'));
     syncThemeButtons();
     document.title = 'BibleDaily · A daily reading companion';
     return;

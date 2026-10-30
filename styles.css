@@ -536,3 +536,45 @@ body.logged-out .app-legal-links { display: none; }
 .legal-page h2 { font-size: 25px; letter-spacing: -.035em; margin-top: 32px; margin-bottom: 12px; }
 .legal-page p { overflow-wrap: anywhere; }
 .legal-intro { font-size: 18px; }
+
+/* Strong green keeps the main sign-in action distinct in both themes. */
+.btn.google-sign-in { background: #216344; border-color: #216344; color: #fff; }
+.btn.google-sign-in:not(:disabled):hover { background: #174d34; border-color: #174d34; }
+.btn.google-sign-in:disabled { opacity: 1; }
+.btn.google-sign-in:disabled:hover { background: #216344; border-color: #216344; transform: none; }
+.landing-support { margin-top: 56px; padding: 34px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 36px; align-items: center; background: var(--paper-deep); box-shadow: none; }
+.support-copy h2 { margin-top: 10px; }
+.support-copy p { margin: 16px 0 0; max-width: 540px; color: var(--muted); }
+.support-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.support-option { display: flex; flex-direction: column; gap: 24px; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--muted); font-size: 14px; transition: border-color .18s, transform .18s; }
+.support-option:hover { border-color: var(--ochre); transform: translateY(-2px); }
+.support-platform { display: flex; justify-content: space-between; gap: 12px; font-size: 22px; font-weight: 700; color: var(--ink); }
+@media (max-width: 900px) { .landing-support { grid-template-columns: 1fr; gap: 24px; } }
+@media (max-width: 600px) { .landing-support { margin-top: 32px; padding: 23px; } .support-options { grid-template-columns: 1fr; } .support-option { gap: 12px; } }
+
+/* Monochrome silhouettes from each platform's cup icon. */
+.support-logo { display: block; width: 52px; height: 48px; background: var(--ink); opacity: .45; mask-repeat: no-repeat; mask-position: left center; mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: left center; -webkit-mask-size: contain; transition: opacity .18s; }
+.support-logo-kofi { mask-image: url('/kofi-logo.png'); -webkit-mask-image: url('/kofi-logo.png'); }
+.support-logo-trakteer { mask-image: url('/trakteer-logo.png'); -webkit-mask-image: url('/trakteer-logo.png'); }
+.support-option:hover .support-logo { opacity: .7; }
+
+.landing-reviews { margin-top: 32px; padding: 34px; }
+.landing-reviews h2 { margin-top: 10px; }
+.review-intro { color: var(--muted); max-width: 680px; }
+.reviews-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; margin-top: 28px; align-items: start; }
+.review-form .field { margin: 18px 0; }
+.review-anonymous { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.review-anonymous input { width: 18px; height: 18px; accent-color: var(--ochre); }
+.review-form textarea { min-height: 150px; }
+.reviews-feed { min-width: 0; }
+.reviews-feed > h3 { font-size: 19px; margin-bottom: 20px; }
+.reader-review { border-top: 1px solid var(--line); padding: 20px 0; }
+.review-byline { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 18px; }
+.review-byline strong { overflow-wrap: anywhere; }
+.review-byline time, .review-meta { font-size: 14px; color: var(--muted); }
+.review-text { margin: 12px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.review-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; }
+.review-meta .btn.text { padding-left: 0; }
+.review-form [data-review-status] { margin: 12px 0 0; }
+@media (max-width: 800px) { .reviews-layout { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 600px) { .landing-reviews { padding: 23px; } }

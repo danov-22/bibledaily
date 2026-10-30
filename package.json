@@ -6,7 +6,8 @@
     "dev": "node server.mjs",
     "start": "node server.mjs",
     "build": "node build.mjs",
-    "check": "node --check app.js && node --check data.js && node --check landing.js && node --check server.mjs && node --check pdf-export.js"
+    "check": "node --check app.js && node --check data.js && node --check landing.js && node --check server.mjs && node --check pdf-export.js && node --check reviews.js && node --check reviews-api.js && node --check reviews-local.js && node --check worker.js",
+    "test": "node --test reviews.test.mjs"
   },
   "engines": {
     "node": ">=20"
