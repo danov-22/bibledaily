@@ -48,3 +48,21 @@ Notes can be added or edited in Progress & Journal: expand a book and chapter, t
 ## Reading at your own pace
 
 Today opens the first unfinished daily portion. Missing days does not skip portions or create a catch-up requirement. **Complete reading** records the date you submit and moves the remaining dates forward. Saving notes alone does not mark a reading complete. PDF records show original begin/end dates, actual submitted reading dates, and the current projected end. Editing notes preserves the original reading-completion date. Legacy entries without completion timestamps are labeled as having no recorded submission date.
+
+## Production domain
+
+The primary URL is https://bibledaily.site/. The Worker configuration in `wrangler.jsonc` attaches `bibledaily.site` as a Custom Domain on the next deployment. The domain must be an active Cloudflare zone in the same account as the Worker.
+
+Build with `npm.cmd run build` and deploy through the existing Cloudflare pipeline, or run `npx.cmd wrangler deploy` from an authenticated terminal. Alternatively, add `bibledaily.site` in the Worker's Domains settings. Cloudflare manages the domain's Worker DNS record and certificate.
+
+For the future Google sign-in backend, use `https://bibledaily.site` as APP_BASE_URL and register `https://bibledaily.site/api/auth/google/callback` as the Google authorized redirect URI. The backend is still missing from this export.
+
+## Public policy pages and sign-in button
+
+After deployment, Google Auth Platform branding can use:
+
+- Home: https://bibledaily.site/
+- Privacy policy: https://bibledaily.site/privacy
+- Terms of service: https://bibledaily.site/terms
+
+These pages are public static files and describe the current browser-local demo. The public support and privacy contact is dany10martin@gmail.com. Before enabling accounts, confirm the operator identity and update the policy with the actual account/Sheets data processing, retention and deletion process. The landing page's Google sign-in/register button is disabled until the session API reports configured: true, then uses the existing /api/auth/google/start action. The backend is not included.
